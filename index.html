@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alwisam Furniture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <!--  NAVBAR  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Alwisam Furniture</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#best">Best Sellers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+
+                    <a href="cart.html" class="btn btn-outline-light me-2">
+                        🛒 Cart <span class="badge bg-danger">0</span>
+                    </a>
+
+                    <div id="authButtons">
+                        <a href="signup.html" class="btn btn-outline-light me-2">Sign Up</a>
+                        <a href="login.html" class="btn btn-primary text-white">Login</a>
+                    </div>
+
+                    <div id="userBox" class="d-none text-white fw-bold">
+                        👤 <span id="usernameDisplay"></span>
+                        <a href="#" class="text-danger ms-2" onclick="logout()">Logout</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!--  HERO  -->
+    <header class="hero vh-100 d-flex align-items-center text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Furniture That Defines Your Home</h1>
+            <p class="lead text-white-50 mb-4">Modern designs, premium quality & lasting comfort</p>
+            <a href="#categories" class="btn btn-outline-light btn-lg px-5">Shop Now</a>
+        </div>
+    </header>
+
+    <!--  FEATURED FURNITURE  -->
+    <section id="featured" class="py-5 bg-dark">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5 text-white">Featured Furniture</h2>
+            <div class="row g-4">
+
+                <!-- Luxury Sofa -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Luxury Sofa.jpg" class="card-img-top" height="350" alt="Luxury Sofa">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title text-white">Luxury Sofa</h5>
+                            <p class="text-white-50">Elegant and comfortable sofa for your living room.</p>
+                            <p class="price fw-bold mb-3 text-white">$2,500</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Luxury Sofa"
+                                data-price="2500">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dining Table Set -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Dining Table Set.jpg" class="card-img-top" height="350" alt="Dining Table Set">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title text-white">Dining Table Set</h5>
+                            <p class="text-white-50">Perfect table set for family meals.</p>
+                            <p class="price fw-bold mb-3 text-white">$1,800</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Dining Table Set"
+                                data-price="1800">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- King Size Bed -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/King Size Bed.jpg" class="card-img-top" height="350" alt="King Size Bed">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title text-white">King Size Bed</h5>
+                            <p class="text-white-50">Spacious and comfortable bed for your bedroom.</p>
+                            <p class="price fw-bold mb-3 text-white">$3,200</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="King Size Bed"
+                                data-price="3200">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Chair -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Office Chair.jpg" class="card-img-top" height="350" alt="Office Chair">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title text-white">Office Chair</h5>
+                            <p class="text-white-50">Ergonomic chair for maximum comfort at work.</p>
+                            <p class="price fw-bold mb-3 text-white">$450</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Office Chair"
+                                data-price="450">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nightstand -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Nightstand.jpg" class="card-img-top" height="350" alt="Nightstand">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title text-white">Nightstand</h5>
+                            <p class="text-white-50">Stylish nightstand with storage space.</p>
+                            <p class="price fw-bold mb-3 text-white">$300</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Nightstand"
+                                data-price="300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee Table -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Coffee Table.jpg" class="card-img-top" height="350" alt="Coffee Table">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title text-white">Coffee Table</h5>
+                            <p class="text-white-50">Modern coffee table to complete your living room.</p>
+                            <p class="price fw-bold mb-3 text-white">$650</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Coffee Table"
+                                data-price="650">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--  CATEGORIES  -->
+    <section id="categories" class="py-5 bg-black">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">Shop by Category</h2>
+            <div class="row g-4">
+
+                <!-- Bedroom Sets -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/spacejoy-nEtpvJjnPVo-unsplash.jpg" class="card-img-top" height="350">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title">Bedroom Sets</h5>
+                            <p class="text-white-50">Elegant and comfortable bedroom solutions.</p>
+                            <p class="price fw-bold mb-3">$2500</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Bedroom Sets"
+                                data-price="2500">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Living Rooms -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Modern seating for your living space..jpg" class="card-img-top" height="350">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title">Living Rooms</h5>
+                            <p class="text-white-50">Modern seating for your living space.</p>
+                            <p class="price fw-bold mb-3">$1800</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Living Rooms"
+                                data-price="1800">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dining Sets -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Perfect tables for family moments..jpg" class="card-img-top" height="350">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title">Dining Sets</h5>
+                            <p class="text-white-50">Perfect tables for family moments.</p>
+                            <p class="price fw-bold mb-3">$1500</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Dining Sets"
+                                data-price="1500">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curtains -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Elegant curtains that add warmth and privacy..jpg" class="card-img-top"
+                            height="350">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title">Curtains</h5>
+                            <p class="text-white-50">Elegant curtains that add warmth and privacy.</p>
+                            <p class="price fw-bold mb-3">$300</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Curtains" data-price="300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wardrobes -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Wardrobe.jpg" class="card-img-top" height="350">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title">Wardrobes</h5>
+                            <p class="text-white-50">Spacious wardrobes with modern designs.</p>
+                            <p class="price fw-bold mb-3">$900</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Wardrobes" data-price="900">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Accessories -->
+                <div class="col-md-4">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Home Accessories.jpg" class="card-img-top" height="350">
+                        <div class="card-body d-flex flex-column position-relative">
+                            <h5 class="card-title">Home Accessories</h5>
+                            <p class="text-white-50">Details that complete your home style.</p>
+                            <p class="price fw-bold mb-3">$200</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Home Accessories"
+                                data-price="200">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--  BEST SELLERS  -->
+    <section id="best" class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">Best Sellers</h2>
+            <div class="row g-4">
+
+                <div class="col-md-3">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Modern Sofa.jpg" class="card-img-top" height="300">
+                        <div class="card-body d-flex flex-column">
+                            <h6>Modern Sofa</h6>
+                            <p class="price mb-3">$850</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Modern Sofa"
+                                data-price="850">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/bed.jpg" class="card-img-top" height="300">
+                        <div class="card-body d-flex flex-column">
+                            <h6>Luxury Bed</h6>
+                            <p class="price mb-3">$1200</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Luxury Bed"
+                                data-price="1200">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Dining Tabl.jpg" class="card-img-top" height="300">
+                        <div class="card-body d-flex flex-column">
+                            <h6>Dining Table</h6>
+                            <p class="price mb-3">$950</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Dining Table"
+                                data-price="950">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card bg-dark border-0 shadow h-100">
+                        <img src="images/Wardrobe.jpg" class="card-img-top" height="300">
+                        <div class="card-body d-flex flex-column">
+                            <h6>Wardrobe</h6>
+                            <p class="price mb-3">$700</p>
+                            <button class="btn add-to-cart btn-add-cart mt-auto" data-name="Wardrobe" data-price="700">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--  ABOUT US  -->
+    <section id="about" class="py-5 bg-black">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="fw-bold mb-4 text-white">About Alwisam Furniture</h2>
+                    <p class="text-white-50 fs-5">
+                        <strong>Alwisam Furniture</strong> is a trusted destination for premium home furniture,
+                        where elegance meets comfort and quality.
+                    </p>
+                    <p class="text-white-50">From luxurious bedroom sets to functional wardrobes, each piece is crafted
+                        with superior materials.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/Furniture.jpg" class="img-fluid rounded shadow" alt="About Alwisam Furniture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  CONTACT  -->
+    <section id="contact" class="py-5" style="background: linear-gradient(135deg, #000000, #1a1a1a); color: #fff;">
+        <div class="container text-center position-relative">
+            <h2 class="fw-bold mb-4 display-5">Get in Touch</h2>
+            <p class="text-white-50 mb-5 fs-5">Let’s connect and make something extraordinary together.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <form class="p-4 rounded-4 shadow-lg contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control custom-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control custom-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control custom-input" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-light w-100 py-2 fw-bold btn-send">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  FOOTER  -->
+    <footer class="py-4 bg-black text-center">
+        <p class="mb-0 text-white-50">©️ 2025 Alwisam Furniture. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+    <script src="index.js"></script>
+    <div id="cart-notification"></div>
+
+</body>
+
+</html>
