@@ -18,12 +18,9 @@ signupForm.addEventListener("submit", function (e) {
     users.push({ username, email, password });
     localStorage.setItem("users", JSON.stringify(users));
 
-    localStorage.setItem("loggedUser", username);
-    localStorage.setItem("loggedIn", "true");
-
     showToast("Signup successful!", "success");
 
     setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }, 1500);
 });
