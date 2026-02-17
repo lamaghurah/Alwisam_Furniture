@@ -3,27 +3,27 @@ const signupForm = document.getElementById("signupForm");
 signupForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const userExists = users.some(user => user.email === email);
+    const userExists = users.some((user) => user.email === email);
     if (userExists) {
-        showToast("❌ This email is already registered");
+        showToast("This email is already registered", "error");
         return;
     }
 
     users.push({ username, email, password });
-
     localStorage.setItem("users", JSON.stringify(users));
 
-    showToast("✅ Signup successful!");
+    localStorage.setItem("loggedUser", username);
+    localStorage.setItem("loggedIn", "true");
+
+    showToast("Signup successful!", "success");
 
     setTimeout(() => {
-        window.location.href = "login.html";
-    }, 2000);
+        window.location.href = "index.html";
+    }, 1500);
 });
-
-console.log("signup.js loaded");

@@ -14,5 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function logout() {
     localStorage.removeItem("loggedUser");
+    localStorage.removeItem("loggedIn");
     location.reload();
 }

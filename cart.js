@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.forEach((item, index) => {
             const li = document.createElement('li');
             li.className = 'mb-2 d-flex justify-content-between align-items-center';
-
             li.innerHTML = `<span>${item.name} - $${formatNumber(item.price)}</span>`;
 
             const removeBtn = document.createElement('button');
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             li.appendChild(removeBtn);
             cartItems.appendChild(li);
-
             total += Number(item.price);
         });
 
@@ -55,9 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             notif.style.opacity = 0;
-            setTimeout(() => {
-                notif.style.display = 'none';
-            }, 500);
+            setTimeout(() => { notif.style.display = 'none'; }, 500);
         }, 2000);
     }
 
@@ -71,12 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!isLoggedIn) {
                 showNotification('Please login first!');
-
-                // 🔁 تحويل لصفحة تسجيل الدخول
                 setTimeout(() => {
                     window.location.href = "login.html";
                 }, 1000);
-
                 return;
             }
 
