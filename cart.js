@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const removeBtn = document.createElement('button');
             removeBtn.className = 'btn-remove';
             removeBtn.innerHTML = '❌';
+
             removeBtn.addEventListener('click', () => {
                 cart.splice(index, 1);
                 localStorage.setItem('cart', JSON.stringify(cart));
@@ -54,12 +55,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             notif.style.opacity = 0;
-            setTimeout(() => { notif.style.display = 'none'; }, 500);
+            setTimeout(() => {
+                notif.style.display = 'none';
+            }, 500);
         }, 2000);
     }
+
     const buttons = document.querySelectorAll('.add-to-cart, .btn-add-cart');
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+
+            // ✅ التحقق من تسجيل الدخول
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+            if (!isLoggedIn) {
+                showNotification('Please login first!');
+
+                // 🔁 تحويل لصفحة تسجيل الدخول
+                setTimeout(() => {
+                    window.location.href = "login.html";
+                }, 1000);
+
+                return;
+            }
+
             const name = button.dataset.name;
             const price = parseFloat(button.dataset.price);
 
